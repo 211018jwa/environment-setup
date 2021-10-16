@@ -15,14 +15,13 @@ The following technologies are required in order to complete this phase of the p
 - **Java SE Development Kit 8**: We will be utilizing Java 8 as our primary language for the duration of the program. This software development kit will provide the compiler and runtime environment needed to quickly and efficiently develop Java applications. Please uninstall any other Java versions if it is there in your machine please as it would cause trouble later.
 - **Spring Tool Suite 4**: We will be using Spring Tool Suite 4 as our *integrated development environment* (IDE). Though you don't need an IDE to write code, an IDE provides several features that make rapid development (e.g. quickly writing and refactoring code) easier.
 - **Apache Maven**: Maven is a software project management and build automation tool. We will use it to manage our projects' builds as it provides dependency management and streamlines several aspects of the testing life cycle.
-- **MariaDB**: MariaDB is an open source relational database. We will leverage this technology in order to persist and organize data.
-- **DBeaver**: DBeaver is a free, open source universal database tool that is compatible with several external data sources, MariaDB included. We'll use DBeaver in order to modify our databases and persist data using a simple user interface provided to us by the tool.
+- **PostgreSQL**: PostgreSQL is an open source relational database. We will leverage this technology in order to persist and organize data.
+- **DBeaver**: DBeaver is a free, open source universal database tool that is compatible with several external data sources, one being Postgres. We'll use DBeaver in order to modify our databases and persist data using a simple user interface provided to us by the tool.
 - **Postman**: Postman is used for testing RESTful APIs. We'll use it to set up collections of tests for the RESTful APIs we design throughout the program. It can also be used to quickly test a single endpoint.
 - **Visual Studio Code**: Visual Studio Code is a text editor that makes viewing and modifying code simple. Do not confuse this tool with an integrated development environment as it does not come equipped with all of the development tools you typically find in an IDE.
 
 
-**NOTE**: This guide primarily is written for those on a Windows Machine. For Mac users [this guide](https://github.com/KodaZys/mac-install-guide) may be more helpful. **A major difference between the linked Mac installation guide and this one is that you should install MariaDB instead of Postgres**. This may require some research on your end.
-
+**NOTE**: This guide primarily is written for those on a Windows Machine. For Mac users [this guide](https://github.com/KodaZys/mac-install-guide) may be more helpful. 
 
 ## Installation Steps
 
@@ -292,39 +291,39 @@ You should see your operating system listed ("Windows 10" in the above example) 
 
 ![](./images/MVN-Version.jpg)
 
-### Step 5: Install MariaDB
+### Step 5: Install Postgres
 
-In order to install MariaDB, please visit [MariaDB's official website](https://mariadb.org/download).
+In order to install PostgreSQL, please visit [PostgreSQL's official download website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). *This site will direct you to Postgres' certified installer.*
 
-Once you've navigated to the website, you should see the following:
+Please look at the row for **version 13.x** as we will downloading this version. Select the download link which corresponds with your system and click it.
 
-![MariaDB Download Home](./images/mariadb-download.PNG)
+You'll then be prompted to save the file. Click "Save File".
 
-Select the latest version of MariaDB, choose the correct operating system, and select x86_64 if you are on a 64-bit machine, or x86 if you are on a 32-bit machine.
-
-Click download, which should start the download process. Wait for the download to complete.
+![Save Postgres Installer](./images/save-postgres.PNG)
 
 The file should now be located in your "Downloads" folder.
 
-![MariaDB In Downloads Folder](./images/mariadb-in-downloads.PNG)
+![Postgres In Downloads Folder](./images/postgres-in-downloads.PNG)
 
 Double click the file, which should launch the installer. You might be asked if you want the application to make changes to your device. Say "yes".
 
 You'll be presented with several menus in the Setup Wizard.
 
-![MariaDB Setup Wizard](./images/mariadb-setup.PNG)
+![Postgres Setup Wizard](./images/postgres-setup.PNG)
 
-Continue to hit "Next", accepting the terms in the License Agreement, etc. until you reach the "Default instance properties" menu. Here you will be tasked with providing a password for the default MariaDB user (which is "root"). The password is completely up to you. That said, DO NOT forget your password as you won't be able to login to your database as the superuser. If you have to, write your password down somewhere or use a password manager.
+Hit "Next" until you get to the "Select Components" menu. Here, you'll want to select and/or deselect the following and then click "Next":
 
-![MariaDB Password](./images/mariadb-password.PNG)
+![Postgres Components](./images/postgres-components.PNG)
 
-After you've decided on a password, hit "Next", which should bring you to the next set of properties. Click "Next", which should take you to the option to install.
+Continue to hit "Next" until you reach the "Password" menu. Here you will be tasked with providing a password for the default Postgres user (which is "postgres"). The password is completely up to you. **DO NOT forget your password as you won't be able to login to your database as the superuser. If you have to, write your password down somewhere or use a password manager.**
 
-<code>**NOTE:** If you get a message such as "The TCP Port you selected is already in use. Please choose a different port", this is because you likely already have a SQL server installed on your machine that is using that particular port, such as MySQL. In that case, either uninstall that other SQL database, or set the "TCP port" option to another port such as 3307 instead of the default 3306.</code>
+#### ❗ ❗ DO NOT FORGET YOUR POSTGRES PASSWORD ❗ ❗
 
-![MariaDB Port](./images/mariadb-port.PNG)
+![Postgres Password](./images/postgres-password.PNG)
 
-MariaDB should now be successfully installed on your computer.
+After you've decided on a password, hit "Next" on the remaining menus and allow time for Postgres to be installed. Once the installation is complete, you might be asked if you want to launch Stack Builder. You can say "no".
+
+PostgreSQL should now be successfully installed on your computer.
 
 ### Step 6: Install DBeaver
 
